@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Mona Sans";
+    src: url("/fonts/Mona-Sans.woff2") format("woff2 supports variations"),
+      url("/fonts/Mona-Sans.woff2") format("woff2-variations");
+    font-weight: 200 900;
+    font-stretch: 75% 125%;
+  }
+
+  html {
+    font-family: Mona Sans, system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  input[type="text"] {
+    @apply w-full border-slate-300 rounded-md focus:border-inherit focus:ring-offset-1 duration-200 focus:ring-slate-600 focus:ring-2 h-12;
+  }
+}
