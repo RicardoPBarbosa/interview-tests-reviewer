@@ -19,7 +19,7 @@ export const useStore = create<State>()(
       },
     }),
     {
-      name: 'interview-tests-review-storage',
+      name: 'interview-tests-reviews-storage',
       version: 1.0,
     }
   )
