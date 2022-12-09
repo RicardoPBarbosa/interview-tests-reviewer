@@ -2,18 +2,20 @@ import { ChangeEvent, ReactElement } from "react";
 
 type Props = {
   children?: ReactElement;
+  checked: boolean
   onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
-export default function Switch({ children, onChange }: Props) {
+export default function Switch({ children, checked, onChange }: Props) {
   return (
-    <div>
+    <div className="flex">
       <label className="flex group items-center gap-2">
         {children}
         <div className="relative w-14 h-8">
           <input
             type="checkbox"
             className="peer opacity-0 w-0 h-0"
+            checked={checked}
             onChange={onChange}
           />
           <span

@@ -9,19 +9,8 @@ export interface State {
   editItem: (type: ItemTypes, payload: Review | Group | Metric) => void
   removeItem: (type: ItemTypes, itemId: string) => void
 
-  // add group
-  // edit group
-  // remove group
-
-  // add metric
-  // edit metric
-  // remove metric
-
-  // add review
-  // edit review
-  // remove review
+  uploadState: (state: object) => void
 }
-
 
 export interface StateActions {
   set: <A extends string | {

@@ -1,5 +1,5 @@
-import { Link, Outlet, useMatch } from "react-router-dom";
 import { CaretCircleLeft } from "phosphor-react";
+import { Link, Outlet, useMatch } from "react-router-dom";
 
 export default function Root() {
   const isHomePage = useMatch("/");
@@ -7,10 +7,10 @@ export default function Root() {
   return (
     <div className="bg-slate-100 min-h-screen px-2 sm:px-4">
       {!isHomePage && (
-        <div className="py-2">
-          <Link to={-1 as any} className="bg-slate-200">
+        <div className="print:hidden pt-3 flex max-w-4xl mx-auto w-full">
+          <Link to="/" className="p-2">
             <CaretCircleLeft
-              size={30}
+              size={34}
               className="text-slate-600"
               weight="regular"
             />

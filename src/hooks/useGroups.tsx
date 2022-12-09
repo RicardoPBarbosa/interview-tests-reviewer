@@ -4,9 +4,10 @@ import { useStore } from "store";
 import { Group, ItemTypes } from "@types";
 
 export default function useGroups() {
-  const { groups, addItem, editItem, removeItem } = useStore(
-    ({ groups, addItem, editItem, removeItem }) => ({
+  const { groups, metrics, addItem, editItem, removeItem } = useStore(
+    ({ groups, metrics, addItem, editItem, removeItem }) => ({
       groups,
+      metrics,
       addItem,
       editItem,
       removeItem,
@@ -14,10 +15,13 @@ export default function useGroups() {
   );
 
   function insertGroup(name: string) {
-    const id = uuid();
-    addItem(ItemTypes.GROUP, { id, name });
+    const payload: Group = {
+      id: uuid(),
+      name,
+    };
+    addItem(ItemTypes.GROUP, payload);
 
-    return id;
+    return payload.id;
   }
 
   function editGroup(group: Group) {
@@ -25,6 +29,13 @@ export default function useGroups() {
   }
 
   function removeGroup(groupId: string) {
+    // detach existing metrics from this group
+    metrics
+      .filter((metric) => metric.groupId === groupId)
+      .forEach((metric) =>
+        editItem(ItemTypes.METRIC, { ...metric, groupId: undefined })
+      );
+
     removeItem(ItemTypes.GROUP, groupId);
   }
 

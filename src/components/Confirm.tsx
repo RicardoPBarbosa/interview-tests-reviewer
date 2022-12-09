@@ -23,7 +23,7 @@ const ConfirmDialog = ({
         className="absolute -z-10 bg-opacity-30 bg-black w-full h-full"
         onClick={() => proceed(false)}
       />
-      <div className="max-w-md bg-white rounded-lg py-3 px-4 flex flex-col items-center gap-3">
+      <div className="max-w-md bg-white rounded-lg p-4 flex flex-col items-center gap-3">
         <span className="text-6xl">💣</span>
         <h1 className="text-lg font-bold" style={{ fontStretch: "expanded" }}>
           Confirm the action
@@ -31,16 +31,13 @@ const ConfirmDialog = ({
         <div className="text-slate-600">{confirmation}</div>
         <div className="flex gap-4 items-center">
           <button
+            autoFocus
             onClick={() => proceed(false)}
-            className="py-2 px-4 rounded-md hover:bg-slate-200 font-medium tracking-wide text-slate-700 transition"
+            className="py-2 px-4 rounded-md hover:bg-slate-200 font-medium tracking-wide text-slate-700 transition focus:ring-2 focus:ring-slate-200 ring-offset-2 outline-none"
           >
             {cancelLabel}
           </button>
-          <button
-            onClick={() => proceed(true)}
-            className="bg-slate-900 text-white py-2 px-4 rounded-md font-medium tracking-wide transition hover:bg-slate-700 focus:ring-2 focus:ring-slate-700 outline-none ring-offset-2"
-            autoFocus
-          >
+          <button onClick={() => proceed(true)} className="main-button">
             {proceedLabel}
           </button>
         </div>

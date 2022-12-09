@@ -14,10 +14,99 @@
   html {
     font-family: Mona Sans, system-ui, sans-serif;
   }
+
+  @media print {
+    body {
+      font-family: Mona Sans, system-ui, sans-serif;
+      print-color-adjust: exact;
+    }
+  }
 }
 
 @layer components {
-  input[type="text"] {
-    @apply w-full border-slate-300 rounded-md focus:border-inherit focus:ring-offset-1 duration-200 focus:ring-slate-600 focus:ring-2 h-12;
+  input[type="text"],
+  textarea {
+    @apply w-full border-slate-300 rounded-md focus:border-inherit focus:ring-offset-1 duration-200 focus:ring-slate-600 focus:ring-2 print:border-none;
   }
+
+  input[type="text"] {
+    @apply h-12;
+  }
+
+  .main-button {
+    @apply bg-slate-900 text-white py-2 px-4 rounded-md font-medium tracking-wide transition hover:bg-slate-700 focus:ring-2 focus:ring-slate-700 peer-focus:ring-2 peer-focus:ring-slate-700 outline-none ring-offset-2 disabled:bg-slate-300 disabled:text-slate-400 disabled:hover:bg-slate-300;
+  }
+
+  .home-button {
+    @apply flex flex-col items-center bg-slate-200 px-4 py-2 font-medium text-slate-800 rounded-md gap-1 transition-all text-center hover:bg-slate-300 focus:ring-2 focus:ring-slate-700 outline-none ring-offset-2;
+    font-stretch: expanded;
+
+    &.dark {
+      @apply bg-slate-800 text-slate-100 hover:bg-slate-700;
+    }
+  }
+
+  .stats-tabs {
+    @apply w-fit rounded-md relative bg-slate-200 p-1;
+
+    & .tab-item-animate {
+      @apply absolute top-1 left-1 h-9 z-0 rounded-md bg-white shadow-sm w-20;
+      transform-origin: 0 0;
+      transition: transform 0.25s;
+    }
+
+    & .tab {
+      @apply relative text-sm z-10 w-20 h-9 font-medium text-slate-500 transition-all hover:text-slate-700;
+
+      &.active {
+        @apply text-slate-700;
+      }
+
+      &:first-child.active ~ .tab-item-animate {
+        transform: translateX(0);
+      }
+      &:nth-child(2).active ~ .tab-item-animate {
+        transform: translateX(100%);
+      }
+    }
+  }
+}
+
+.w-md-editor {
+  @apply !rounded-md !shadow-none border border-slate-300;
+}
+
+.w-md-editor-text-pre > code span,
+.w-md-editor-text-input {
+  border-radius: 0;
+  font-size: 15px !important;
+  line-height: 22px !important;
+  font-family: "Mona Sans" !important;
+}
+
+.w-md-editor > .w-md-editor-toolbar {
+  background-color: transparent !important;
+  & li > button {
+    width: 30px !important;
+    height: 30px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    & svg {
+      width: 16px !important;
+      height: 16px !important;
+      @apply text-slate-600;
+    }
+  }
+}
+
+.w-md-editor-toolbar-child .w-md-editor-toolbar li > button {
+  width: inherit !important;
+  height: inherit !important;
+  padding: 4px 5px !important;
+}
+
+.w-md-editor-bar {
+  @apply !w-4 !h-4 !px-2 !bottom-1 !right-4;
 }

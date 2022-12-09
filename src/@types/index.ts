@@ -6,13 +6,18 @@ export interface Group {
 export interface Metric {
   id: string
   name: string
-  value?: 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
   groupId?: string
 }
 
+export interface ReviewMetric extends Metric {
+  value?: number
+}
+
 export interface Review {
-  candidateId: string
-  metrics: Metric[]
+  id: string
+  candidateName: string
+  metrics: ReviewMetric[]
+  finalScore: number
   notes?: string
   // ---
   createdAt: Date
@@ -24,3 +29,5 @@ export enum ItemTypes {
   METRIC,
   REVIEW
 }
+
+export interface MetricsByGroup { groupName: string; metrics: Metric[] }

@@ -1,16 +1,11 @@
 import { FormEvent, useState } from "react";
-import {
-  CheckCircle,
-  FolderNotchPlus,
-  KeyReturn,
-  PenNib,
-  Trash,
-  XCircle,
-} from "phosphor-react";
+import { FolderNotchPlus } from "phosphor-react";
 
 import { Group } from "@types";
 import { useGroups } from "hooks";
 import { confirm } from "components/Confirm";
+import TextInput from "components/TextInput";
+import CrudActionButtons from "components/CrudActionButtons";
 
 type Props = {
   selectedGroupId: string | undefined;
@@ -77,48 +72,18 @@ export default function Groups({ onSelect, selectedGroupId }: Props) {
       >
         {itemContent}
         <div className="flex items-center gap-2 py-2 pr-2">
-          {isEditing ? (
-            <>
-              <button
-                className="p-2 hover:bg-white rounded-md focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-slate-800 outline-none"
-                onClick={() => {
-                  editGroup(editingGroup);
-                  setEditingGroup(undefined);
-                }}
-              >
-                <CheckCircle
-                  weight="fill"
-                  size={22}
-                  className="text-emerald-500"
-                />
-              </button>
-              <button
-                className="p-2 hover:bg-white rounded-md focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-slate-800 outline-none"
-                onClick={() => setEditingGroup(undefined)}
-              >
-                <XCircle weight="fill" size={22} className="text-rose-600" />
-              </button>
-            </>
-          ) : (
-            <>
-              <button
-                className="p-2 hover:bg-white rounded-md focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-slate-800 outline-none"
-                onClick={() => setEditingGroup(group)}
-              >
-                <PenNib weight="bold" size={22} className="text-slate-500" />
-              </button>
-              <button
-                className="p-2 hover:bg-white rounded-md focus-within:ring-2 focus-within:ring-offset-2 focus-within:ring-slate-800 outline-none group"
-                onClick={() => onDeleteRequest(group.id)}
-              >
-                <Trash
-                  weight="bold"
-                  size={22}
-                  className="text-slate-500 group-disabled:text-slate-300"
-                />
-              </button>
-            </>
-          )}
+          <CrudActionButtons
+            isEditing={isEditing}
+            onSubmitEdit={() => {
+              if (isEditing) {
+                editGroup(editingGroup);
+                setEditingGroup(undefined);
+              }
+            }}
+            onCancelEdit={() => setEditingGroup(undefined)}
+            onSetEditing={() => setEditingGroup(group)}
+            onRequestDelete={() => onDeleteRequest(group.id)}
+          />
         </div>
       </div>
     );
@@ -134,32 +99,20 @@ export default function Groups({ onSelect, selectedGroupId }: Props) {
       </h3>
       <div className="grid gap-3">
         <form onSubmit={onSubmit} className="flex flex-col gap-3">
-          <label
-            htmlFor="groupName"
-            className="relative group"
-            onFocus={() => setEditingGroup(undefined)}
-          >
-            <div className="absolute top-2.5 left-2">
+          <TextInput
+            name="groupName"
+            value={newGroupName}
+            placeholder="New group name"
+            setValue={setNewGroupName}
+            startIcon={
               <FolderNotchPlus
                 size={28}
                 className="text-slate-300 group-focus-within:text-slate-800"
               />
-            </div>
-            <input
-              type="text"
-              id="groupName"
-              name="groupName"
-              className="pl-11"
-              value={newGroupName}
-              placeholder="New group name"
-              onChange={(e) => setNewGroupName(e.target.value)}
-            />
-            {!!newGroupName.trim().length && (
-              <div className="absolute right-2 top-2.5 text-slate-500">
-                <KeyReturn weight="duotone" size={30} />
-              </div>
-            )}
-          </label>
+            }
+            showSubmitByEnterKey={!!newGroupName.trim().length}
+            onFocusAction={() => setEditingGroup(undefined)}
+          />
         </form>
         <div className="flex flex-col gap-2">
           {groups.map((group) => (

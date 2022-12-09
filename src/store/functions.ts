@@ -37,7 +37,7 @@ function editItem({ get, set }: StateActions, type: ItemTypes, payload: Review |
     case ItemTypes.REVIEW:
       const reviews = get().reviews
       const editedReviews = reviews.map((r) => {
-        if (r.candidateId === (payload as Review).candidateId) {
+        if (r.id === (payload as Review).id) {
           return { ...r, ...payload }
         }
         return r
@@ -57,7 +57,7 @@ function removeItem({ get, set }: StateActions, type: ItemTypes, itemId: string)
       const metrics = get().metrics.filter((g) => g.id !== itemId)
       return set((state) => ({ ...state, metrics }))
     case ItemTypes.REVIEW:
-      const reviews = get().reviews.filter((g) => g.candidateId !== itemId)
+      const reviews = get().reviews.filter((g) => g.id !== itemId)
       return set((state) => ({ ...state, reviews }))
     default:
       return;
