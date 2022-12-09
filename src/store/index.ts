@@ -13,10 +13,7 @@ export const useStore = create<State>()(
       addItem: (type, payload) => addItem({ get, set }, type, payload),
       editItem: (type, payload) => editItem({ get, set }, type, payload),
       removeItem: (type, payload) => removeItem({ get, set }, type, payload),
-      uploadState: (data) => {
-        console.log({ data })
-        set(data)
-      },
+      uploadState: (data) => set(data),
     }),
     {
       name: 'interview-tests-reviews-storage',
