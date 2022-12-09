@@ -8,6 +8,7 @@ import Root from "pages";
 import Home from "pages/Home";
 import Review from "pages/Review";
 import Metrics from "pages/Metrics";
+import NotFound from "components/NotFound";
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,6 +19,10 @@ export const router = createBrowserRouter(
         <Route path=":id" element={<Review />} />
         <Route path="" element={<Review />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Route>
-  )
+  ),
+  {
+    basename: "/interview-tests-reviews"
+  }
 );
