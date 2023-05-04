@@ -12,6 +12,13 @@
 
 #### This project was born out of necessity. I was reviewing a lot of coding interview tests, and I wanted a place to keep track of the metrics I was using to evaluate the tests, my personal comments at the end, and also to keep a record of the previous reviews.
 
+# Tools Used
+* [React](https://reactjs.org/)
+* [Vite](https://vitejs.dev/)
+* [Typescript](https://www.typescriptlang.org/)
+* [TailwindCSS](https://tailwindcss.com/)
+* [Zustand](https://github.com/pmndrs/zustand) - State management, your data is stored in **Local Storage**
+
 # Features
 
 ## Metric Management
