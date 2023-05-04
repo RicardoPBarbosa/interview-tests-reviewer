@@ -1,24 +1,28 @@
-import { useStore } from "store"
-import { buildBlob } from "utils"
+import { useStore } from "store";
+import { buildBlob } from "utils";
 
 export default function useExportData() {
-  const data = useStore(({ groups, metrics, reviews }) => ({ groups, metrics, reviews }));
+  const data = useStore(({ groups, metrics, reviews }) => ({
+    groups,
+    metrics,
+    reviews,
+  }));
 
   function exportData() {
-    const objectUrl = buildBlob(data)
+    const objectUrl = buildBlob(data);
 
     const saveFile = async () => {
-      const a = document.createElement('a');
-      a.download = 'interview-tests-reviews-export.json';
+      const a = document.createElement("a");
+      a.download = "interview-tests-reviewer-export.json";
       a.href = objectUrl;
-      a.addEventListener('click', () => {
+      a.addEventListener("click", () => {
         setTimeout(() => URL.revokeObjectURL(a.href), 500);
       });
       a.click();
     };
 
-    saveFile()
+    saveFile();
   }
 
-  return exportData
+  return exportData;
 }

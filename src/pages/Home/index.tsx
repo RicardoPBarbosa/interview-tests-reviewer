@@ -13,7 +13,7 @@ export default function Home() {
         className="text-2xl font-bold pb-4 text-slate-700"
         style={{ fontStretch: "expanded" }}
       >
-        Interview Tests Reviews
+        Interview Tests Reviewer
       </h1>
       <div className="flex flex-col sm:flex-row gap-4">
         <Link to="/review" className="home-button dark">

@@ -23,6 +23,6 @@ export const router = createBrowserRouter(
     </Route>
   ),
   {
-    basename: "/interview-tests-reviews"
+    basename: "/interview-tests-reviewer",
   }
 );

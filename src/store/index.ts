@@ -1,8 +1,8 @@
-import create from 'zustand'
-import { persist } from 'zustand/middleware'
+import create from "zustand";
+import { persist } from "zustand/middleware";
 
-import { State } from './types'
-import { addItem, editItem, removeItem } from './functions'
+import { State } from "./types";
+import { addItem, editItem, removeItem } from "./functions";
 
 export const useStore = create<State>()(
   persist(
@@ -16,8 +16,8 @@ export const useStore = create<State>()(
       uploadState: (data) => set(data),
     }),
     {
-      name: 'interview-tests-reviews-storage',
+      name: "interview-tests-reviewer-storage",
       version: 1.0,
     }
   )
-)
+);
