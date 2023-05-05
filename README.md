@@ -26,6 +26,8 @@ You can sort metrics by groups (or not) for better organization and to try and i
 
 ![Metric Management](./assets/metric-management.png)
 
+📊 If you want some example metrics & groups, these are the ones I am using (at the time I wrote this). [Download them here](./assets/example-metrics.json)
+
 ## Submit Review
 Page with the tools needed to make your review.
 * Give a score by metric

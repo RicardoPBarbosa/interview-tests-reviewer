@@ -1,0 +1,117 @@
+{
+  "groups": [
+    {
+      "id": "18c77322-c27f-a020-3c58-d5d8d7e00e3d",
+      "name": "Coding Skills"
+    },
+    {
+      "id": "189d96ef-1438-36e4-d93a-a35cfb0af223",
+      "name": "Features"
+    },
+    {
+      "id": "f30770b9-93e1-c832-82ed-0abc889b1a8e",
+      "name": "Profile"
+    },
+    {
+      "id": "365a9bd1-0ba3-6d0f-02b0-cd36cac9e74a",
+      "name": "README.md"
+    },
+    {
+      "id": "70acfc9b-45a7-ebdd-0500-1e6eca51ba12",
+      "name": "UI"
+    }
+  ],
+  "metrics": [
+    {
+      "id": "de671914-dde0-2dcb-d457-d197083b87ae",
+      "name": "Activity on GitHub / Social NW's",
+      "groupId": "f30770b9-93e1-c832-82ed-0abc889b1a8e"
+    },
+    {
+      "id": "7a3e95e1-58e6-612b-ae57-b4a4f2acbba4",
+      "name": "Interested in using the latest tools / shows passion for the area",
+      "groupId": "f30770b9-93e1-c832-82ed-0abc889b1a8e"
+    },
+    {
+      "id": "19ded9aa-13fe-1372-132f-258d0ce88c27",
+      "name": "Clarity of instructions",
+      "groupId": "365a9bd1-0ba3-6d0f-02b0-cd36cac9e74a"
+    },
+    {
+      "id": "e41a8218-d3d7-be5c-d06e-7178218cd5a7",
+      "name": "Knowledge of how to create a README",
+      "groupId": "365a9bd1-0ba3-6d0f-02b0-cd36cac9e74a"
+    },
+    {
+      "id": "5a36b33f-9d3f-4e8d-603f-16fb93bd9613",
+      "name": "Care with the presentation",
+      "groupId": "70acfc9b-45a7-ebdd-0500-1e6eca51ba12"
+    },
+    {
+      "id": "6c887375-7f46-46be-3377-c164a10a1925",
+      "name": "Knowledge of UI/UX",
+      "groupId": "70acfc9b-45a7-ebdd-0500-1e6eca51ba12"
+    },
+    {
+      "id": "d3807819-7677-bd26-5b28-51b2eca67b24",
+      "name": "Knowledge of used UI library/framework",
+      "groupId": "70acfc9b-45a7-ebdd-0500-1e6eca51ba12"
+    },
+    {
+      "id": "3fdbb40a-235e-0271-1a17-8923c57a9ab7",
+      "name": "Quality of the basic requested features",
+      "groupId": "189d96ef-1438-36e4-d93a-a35cfb0af223"
+    },
+    {
+      "id": "53b71c5e-cd14-330d-3034-2fd6a8383bcf",
+      "name": "Additional features implemented",
+      "groupId": "189d96ef-1438-36e4-d93a-a35cfb0af223"
+    },
+    {
+      "id": "09c2d782-5264-c219-b797-2f88ebed8fff",
+      "name": "Comfort with the language chosen",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "2733278c-793d-2449-3768-de7de9de5d5b",
+      "name": "Similarity with our internal tech stack (TS, React+MUI, RN)",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "558d8b60-2c7c-7553-c7a2-f352bfdd1384",
+      "name": "Usage of environment variables",
+      "groupId": "189d96ef-1438-36e4-d93a-a35cfb0af223"
+    },
+    {
+      "id": "41eb08f7-6792-7824-aff3-2bbe64fc878c",
+      "name": "Error handling",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "520c0f64-d3ed-19eb-7c33-5fa6c1051725",
+      "name": "Care to clean code for production",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "f173b0f2-0855-b03f-9c72-324f0e8d18cf",
+      "name": "Explanation of missing features/choice of tools",
+      "groupId": "f30770b9-93e1-c832-82ed-0abc889b1a8e"
+    },
+    {
+      "id": "47c135ef-b1a5-ba99-0567-054793f54564",
+      "name": "Clarity of each code piece function",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "fc04499b-f33a-42e2-4216-a079d16c0197",
+      "name": "Code organization",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    },
+    {
+      "id": "bddf0587-26b5-0060-5b37-35984f8974fd",
+      "name": "Folder structure quality",
+      "groupId": "18c77322-c27f-a020-3c58-d5d8d7e00e3d"
+    }
+  ],
+  "reviews": []
+}
