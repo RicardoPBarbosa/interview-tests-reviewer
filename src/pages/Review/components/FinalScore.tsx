@@ -13,7 +13,6 @@ export default function FinalScore({
   finalScore,
   setFinalScore,
 }: Props) {
-  console.log("average", average);
 
   return (
     <div
