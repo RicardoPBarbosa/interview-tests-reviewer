@@ -18,7 +18,7 @@ export default function FinalScore({
   return (
     <div
       className={`bg-slate-800  print:pb-2 px-3 rounded-md flex items-center justify-between ${
-        average ? "pt-2 pb-6" : "p-2"
+        average ? "pt-2 pb-6" : "py-2"
       }`}
     >
       <h3
