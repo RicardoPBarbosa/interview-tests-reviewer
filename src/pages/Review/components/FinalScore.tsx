@@ -13,8 +13,13 @@ export default function FinalScore({
   finalScore,
   setFinalScore,
 }: Props) {
+
   return (
-    <div className="bg-slate-800 pt-2 pb-6 print:pb-2 px-3 rounded-md flex items-center justify-between">
+    <div
+      className={`bg-slate-800  print:pb-2 px-3 rounded-md flex items-center justify-between ${
+        average ? "pt-2 pb-6" : "py-2"
+      }`}
+    >
       <h3
         className="w-1/3 text-slate-100 font-medium text-2xl print:text-xl"
         style={{ fontStretch: "condensed" }}

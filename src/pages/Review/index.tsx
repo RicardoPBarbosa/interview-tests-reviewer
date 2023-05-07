@@ -26,8 +26,7 @@ export default function Review() {
   );
   const [notes, setNotes] = useState(review?.notes || "");
   const [finalScore, setFinalScore] = useState(review?.finalScore || 0);
-  const submitDisabled =
-    !candidateName.trim().length || !candidateMetrics.length || !finalScore;
+  const submitDisabled = !candidateName.trim().length || !finalScore;
   const isReviewDetails = !!review;
 
   if (!!id && !review) {
